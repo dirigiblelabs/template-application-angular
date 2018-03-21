@@ -7,15 +7,13 @@ exports.getTemplate = function() {
 		{
 			"location": "/template-application-angular/application.schema.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.schema",
-			"type": "db-schema"
+			"rename": "{{fileName}}.schema"
 		},
 		{
 			"location": "/template-application-angular/application.js.template", 
 			"action": "generate",
 			"rename": "{{fileName}}.js",
-			"collection": "services",
-			"type": "rest-service"
+			"collection": "dataModels"
 		},
 		{
 			"location": "/template-application-angular/index.html.template", 
@@ -31,8 +29,7 @@ exports.getTemplate = function() {
 			"rename": "{{fileName}}.html",
 			"start" : "[[",
 			"end" : "]]",
-			"collection": "collectionManage",
-			"type": "ui-manage"
+			"collection": "uiManageModels"
 		},
 		{
 			"location": "/template-application-angular/list.html.template", 
@@ -40,10 +37,16 @@ exports.getTemplate = function() {
 			"rename": "{{fileName}}.html",
 			"start" : "[[",
 			"end" : "]]",
-			"collection": "collectionList",
-			"type": "ui-list"
+			"collection": "uiListModels"
+		},
+		{
+			"location": "/template-application-angular/display.html.template", 
+			"action": "generate",
+			"rename": "{{fileName}}.html",
+			"start" : "[[",
+			"end" : "]]",
+			"collection": "uiDisplayModels"
 		}
-
 		],
 		"parameters": []
 	};
