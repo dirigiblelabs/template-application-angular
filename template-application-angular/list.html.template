@@ -18,7 +18,7 @@
 
     <div>
       <div class="page-header">
-        <h1>[[entityName]] List</h1>
+        <h1>[[name]] List</h1>
       </div>
       
   </body>

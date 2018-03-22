@@ -18,7 +18,7 @@ exports.getTemplate = function() {
 		{
 			"location": "/template-application-angular/index.html.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.html",
+			"rename": "index.html",
 			"start" : "[[",
 			"end" : "]]",
 			"type": "ui-index"

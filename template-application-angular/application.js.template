@@ -3,16 +3,16 @@ var rsdata = require('http/v3/rs-data');
 rsdata
   .service()
     .dao({
-	  "table": "{{entityName}}_BOOKS",
+	  "table": "{{dataName}}",
 	  "properties": [
 	  {{#properties}}
 	  	{
-		  	"name": "{{.name}}",
-	    	"column": "{{.dataName}}",
-			"type":"{{.dataType}}",
-			"id": "{{.dataPrimaryKey}}",
-			"required": "{{.dataNotNull}}"
-		}
+		  	"name": "{{name}}",
+	    	"column": "{{dataName}}",
+			"type":"{{dataType}}",
+			"id": "{{dataPrimaryKey}}",
+			"required": "{{dataNullable}}"
+		},
 	  {{/properties}}
 	  ]
     })
