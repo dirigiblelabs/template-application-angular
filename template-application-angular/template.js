@@ -24,9 +24,17 @@ exports.getTemplate = function() {
 			"type": "ui-index"
 		},
 		{
+			"location": "/template-application-angular/ui/index.html.template", 
+			"action": "generate",
+			"rename": "ui/{{fileName}}/index.html",
+			"start" : "[[",
+			"end" : "]]",
+			"collection": "uiManageModels"
+		},
+		{
 			"location": "/template-application-angular/ui/manage.html.template", 
 			"action": "generate",
-			"rename": "ui/{{fileName}}.html",
+			"rename": "ui/{{fileName}}/manage.html",
 			"start" : "[[",
 			"end" : "]]",
 			"collection": "uiManageModels"
