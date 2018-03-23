@@ -5,44 +5,44 @@ exports.getTemplate = function() {
 		"model":"true",
 		"sources": [
 		{
-			"location": "/template-application-angular/application.schema.template", 
+			"location": "/template-application-angular/data/application.schema.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.schema"
+			"rename": "data/{{fileName}}.schema"
 		},
 		{
-			"location": "/template-application-angular/application.js.template", 
+			"location": "/template-application-angular/api/application.js.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.js",
+			"rename": "api/{{fileName}}.js",
 			"collection": "dataModels"
 		},
 		{
-			"location": "/template-application-angular/index.html.template", 
+			"location": "/template-application-angular/ui/index.html.template", 
 			"action": "generate",
-			"rename": "index.html",
+			"rename": "ui/index.html",
 			"start" : "[[",
 			"end" : "]]",
 			"type": "ui-index"
 		},
 		{
-			"location": "/template-application-angular/manage.html.template", 
+			"location": "/template-application-angular/ui/manage.html.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.html",
+			"rename": "ui/{{fileName}}.html",
 			"start" : "[[",
 			"end" : "]]",
 			"collection": "uiManageModels"
 		},
 		{
-			"location": "/template-application-angular/list.html.template", 
+			"location": "/template-application-angular/ui/list.html.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.html",
+			"rename": "ui/{{fileName}}.html",
 			"start" : "[[",
 			"end" : "]]",
 			"collection": "uiListModels"
 		},
 		{
-			"location": "/template-application-angular/display.html.template", 
+			"location": "/template-application-angular/ui/display.html.template", 
 			"action": "generate",
-			"rename": "{{fileName}}.html",
+			"rename": "ui/{{fileName}}.html",
 			"start" : "[[",
 			"end" : "]]",
 			"collection": "uiDisplayModels"
