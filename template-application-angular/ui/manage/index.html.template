@@ -17,14 +17,16 @@
 		<a class="navbar-brand text-center" href="#">Manage [[name]]</a>
 	</nav>
 
-	<div class="jumbotron">
+	<div class="jumbotron" style="margin-left: 10%; margin-right: 10%;">
+		<button type="button" ng-click="new()" class="btn btn-primary btn-md waves-effect waves-light pull-right">New</button>
 		<table class="table product-table">
 			<thead>
 				<tr>
 					<th></th>
 					[[#properties]]
-					<th>[[name]]</th>
+					<th class="text-capitalize">[[name]]</th>
 					[[/properties]]
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,6 +35,7 @@
 					[[#properties]]
 					<td>{{next.[[name]]}}</td>
 					[[/properties]]
+					<td ng-click="update(next)"><i class="close fa fa-pencil"></i></td>
 				</tr>
 			</tbody>
 		</table>
@@ -68,7 +71,7 @@
 		angular.module('page', []);
 		angular.module('page').controller('PageController', function ($scope, $http) {
 
-			var api = '../../../js/[[projectName]]/api/[[name]].js';
+			var api = '../../../../js/[[projectName]]/api/[[name]].js';
 
 			function load() {
 				$http.get(api)
@@ -77,6 +80,14 @@
 				});
 			}
 			load();
+
+			$scope.new = function() {
+				alert('New clicked!');
+			};
+
+			$scope.update = function(entity) {
+				alert('Edit clicked for: ' + JSON.stringify(entity));
+			};
   	  });
 	</script>
 </body>
