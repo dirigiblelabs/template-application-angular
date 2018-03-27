@@ -97,7 +97,7 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-angular/ui/shell/message-hub.js.template', 
 			'action': 'copy',
-			'rename': 'ui/shell/mesage-hub.js'
+			'rename': 'ui/shell/message-hub.js'
 		}, {
 			'location': '/template-application-angular/ui/shell/tmpl/menu.html.template', 
 			'action': 'copy',
