@@ -100,7 +100,7 @@ exports.getTemplate = function() {
 			'rename': 'ui/shell/message-hub.js'
 		}, {
 			'location': '/template-application-angular/ui/shell/tmpl/menu.html.template', 
-			'action': 'copy',
+			'action': 'generate',
 			'rename': 'ui/shell/tmpl/menu.html'
 		}, {
 			'location': '/template-application-angular/ui/shell/tmpl/sidebar.html.template', 
@@ -116,7 +116,7 @@ exports.getTemplate = function() {
 			'rename': 'ui/shell/ui-core-ng-modules.js'
 		}, {
 			'location': '/template-application-angular/ui/shell/ui-layout.js.template', 
-			'action': 'copy',
+			'action': 'generate',
 			'rename': 'ui/shell/ui-layout.js'
 		}, {
 			'location': '/template-application-angular/index.html.template', 
@@ -126,6 +126,9 @@ exports.getTemplate = function() {
 		'parameters': [{
 			'name': 'extensionName',
 			'label': 'Extension Name'
+		}, {
+			'name': 'brand',
+			'label': 'Brand'
 		}]
 	};
 };
