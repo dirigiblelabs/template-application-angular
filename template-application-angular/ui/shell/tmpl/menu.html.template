@@ -14,7 +14,7 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul id="main-menu" class="nav navbar-nav">
 				<li ng-repeat="menuItem in menu">
-					<a href="{{item.link}}" ng-click="menuClick(item)" target="{{menuItem.newTab ? '_blank' : '_self'}}">{{menuItem.name}}</a>
+					<a href="{{menuItem.link}}" ng-click="menuClick(menuItem)" target="{{menuItem.newTab ? '_blank' : '_self'}}">{{menuItem.name}}</a>
 				</li>
 				<!--
 				<li ng-class="{dropdown: !!menu.items}" ng-repeat="menuItem in menu">
