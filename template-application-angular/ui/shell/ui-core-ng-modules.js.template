@@ -239,7 +239,7 @@ angular.module('ideUiCore', ['ngResource'])
 			};
 			scope.user = User.get();
 		},
-		templateUrl: '/services/v3/web/{{projectName}}/shell/ui/tmpl/menu.html'
+		templateUrl: '/services/v3/web/{{projectName}}/ui/shell/tmpl/menu.html'
 	}
 }])
 .directive('sidebar', ['Perspectives', function(Perspectives){
@@ -253,7 +253,7 @@ angular.module('ideUiCore', ['ngResource'])
 		link: function(scope, el, attrs){
 			scope.perspectives = Perspectives.query();
 		},
-		templateUrl: '/services/v3/web/{{projectName}}/shell/ui/tmpl/sidebar.html'
+		templateUrl: '/services/v3/web/{{projectName}}/ui/shell/tmpl/sidebar.html'
 	}
 }])
 .directive('statusBar', ['messageHub', function(messageHub){
