@@ -1,26 +1,26 @@
 {
     "schema": {
         "structures": [
-        {{#dataModels}}
+        {{#dataModels_}}
             {
-                "name": "{{dataName}}",
+                "name": "{{value.dataName}}",
                 "type": "TABLE",
                 "columns": 
                 [
-                {{#properties}}
+                {{#properties_}}
                     {
-                        "name": "{{dataName}}",
-                        "type": "{{dataType}}",
-                        "length": "{{dataLength}}",
-                        "primaryKey": "{{dataPrimaryKey}}",
-                        "identity": "{{dataAutoIncrement}}",
-                        "precision": "{{dataPrecision}}",
-                        "scale": "{{dataScale}}"
+                        "name": "{{value.dataName}}",
+                        "type": "{{value.dataType}}",
+                        "length": "{{value.dataLength}}",
+                        "primaryKey": "{{value.dataPrimaryKey}}",
+                        "identity": "{{value.dataAutoIncrement}}",
+                        "precision": "{{value.dataPrecision}}",
+                        "scale": "{{value.dataScale}}"
                     }{{^last}},{{/last}}
-                {{/properties}}
+                {{/properties_}}
                 ]
-            },
-        {{/dataModels}}
+            }{{^last}},{{/last}}
+        {{/dataModels_}}
         ]
     }
 }
