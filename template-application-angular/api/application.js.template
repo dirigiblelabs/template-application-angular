@@ -8,7 +8,7 @@ rsdata
 	  {{#properties}}
 	  	{
 		  	"name": "{{name}}",
-	    	"column": "{{dataName}}",
+			"column": "{{dataName}}",
 			"type":"{{dataType}}",
 			"id": "{{dataPrimaryKey}}",
 			"required": "{{dataNullable}}"
