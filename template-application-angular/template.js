@@ -23,7 +23,7 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-angular/data/application.schema.template', 
 			'action': 'generate',
-			'rename': 'data/{{fileName}}.schema'
+			'rename': 'data/{{fileNameBase}}.schema'
 		}, {
 			'location': '/template-application-angular/extensions/menu/application.extension.template', 
 			'action': 'generate',
