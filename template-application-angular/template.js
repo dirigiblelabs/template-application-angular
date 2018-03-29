@@ -72,13 +72,6 @@ exports.getTemplate = function() {
 			'end' : ']]',
 			'collection': 'uiManageModels'
 		}, {
-			'location': '/template-application-angular/ui/manage/manage.html.template', 
-			'action': 'generate',
-			'rename': 'ui/{{fileName}}/manage.html',
-			'start' : '[[',
-			'end' : ']]',
-			'collection': 'uiManageModels'
-		}, {
 			'location': '/template-application-angular/ui/list.html.template', 
 			'action': 'generate',
 			'rename': 'ui/{{fileName}}.html',
