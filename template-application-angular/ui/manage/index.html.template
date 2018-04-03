@@ -129,6 +129,7 @@
 			$scope.create = function() {
 				$http.post(api, JSON.stringify($scope.entity))
 				.success(function(data) {
+					load();
 					toggleEntityModal();
 				}).error(function(data) {
 					alert(JSON.stringify(data));
@@ -139,6 +140,7 @@
 			$scope.update = function() {
 				$http.put(api, JSON.stringify($scope.entity))
 				.success(function(data) {
+					load();
 					toggleEntityModal();
 				}).error(function(data) {
 					alert(JSON.stringify(data));
@@ -148,6 +150,7 @@
 			$scope.delete = function() {
 				$http.delete(api)
 				.success(function(data) {
+					load();
 					toggleDeleteModal();
 				}).error(function(data) {
 					alert(JSON.stringify(data));
