@@ -14,7 +14,7 @@
 
 <body ng-controller="PageController">
 	<div class="page-header">
-		<h1>Manage [[name]]</h1>
+		<h1>Manage ${name}</h1>
 	</div>
 	<div class="container">
 		<button type="button" ng-click="openNewDialog()" class="btn btn-lg btn-primary pull-right">New</button>
@@ -22,18 +22,18 @@
 			<thead>
 				<tr>
 					<th></th>
-					[[#properties]]
-					<th class="text-capitalize">[[name]]</th>
-					[[/properties]]
+					#foreach ($property in $properties) 
+					<th class="text-capitalize">${property.name}</th>
+					#end
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="next in data">
 					<td>{{$index + 1}}</td>
-					[[#properties]]
-					<td>{{next.[[name]]}}</td>
-					[[/properties]]
+					#foreach ($property in $properties) 
+					<td>{{next.${property.name}}}</td>
+					#end
 					<td>
 						<i class="close fa fa-2x fa-remove" ng-click="openDeleteDialog(next)"></i>
 						<i class="close fa fa-2x fa-pencil" ng-click="openEditDialog(next)" style="margin-right: 0.5em"></i>
@@ -73,12 +73,12 @@
 				</div>
 				<div class="modal-body">
 					<form>
-						[[#properties]]
+						#foreach ($property in $properties) 
 						<div class="form-group">
-							<label>[[widgetLabel]]</label>
-							<input type="[[widgetType]]" class="form-control" placeholder="Enter [[widgetLabel]]" ng-model="entity.[[name]]">
+							<label>${property.widgetLabel}</label>
+							<input type="${property.widgetType}" class="form-control" placeholder="Enter ${property.widgetLabel}" ng-model="entity.${property.name}">
 						</div>
-						[[/properties]]
+						#end
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -100,7 +100,7 @@
 		angular.module('page', []);
 		angular.module('page').controller('PageController', function ($scope, $http) {
 
-			var api = '../../../../js/[[projectName]]/api/[[name]].js';
+			var api = '../../../../js/${projectName}/api/${name}.js';
 
 			function load() {
 				$http.get(api)
@@ -127,7 +127,8 @@
 			};
 
 			$scope.create = function() {
-				$http.post(api, JSON.stringify($scope.entity))
+				var payload = JSON.stringify($scope.entity);
+				$http.post(api, payload)
 				.success(function(data) {
 					load();
 					toggleEntityModal();
@@ -138,7 +139,8 @@
 			};
 
 			$scope.update = function() {
-				$http.put(api, JSON.stringify($scope.entity))
+				var payload = JSON.stringify($scope.entity);
+				$http.put(api, payload)
 				.success(function(data) {
 					load();
 					toggleEntityModal();

@@ -67,10 +67,11 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-angular/ui/manage/index.html.template', 
 			'action': 'generate',
+			'start': '[[',
+			'end': ']]',
 			'rename': 'ui/{{fileName}}/index.html',
-			'start' : '[[',
-			'end' : ']]',
-			'collection': 'uiManageModels'
+			'collection': 'uiManageModels',
+			'engine': 'velocity'
 		}, {
 			'location': '/template-application-angular/ui/list.html.template', 
 			'action': 'generate',
