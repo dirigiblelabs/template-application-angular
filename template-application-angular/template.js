@@ -67,8 +67,6 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-angular/ui/manage/index.html.template', 
 			'action': 'generate',
-			'start': '[[',
-			'end': ']]',
 			'rename': 'ui/{{fileName}}/index.html',
 			'collection': 'uiManageModels',
 			'engine': 'velocity'
