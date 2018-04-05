@@ -89,7 +89,7 @@
 #end
 					</form>
 					<div ng-show="actionType === 'delete'">
-						Hello World!
+						You are going to delete ${name} with <b>Id = {{entity.id}}</b>.
 					</div>
 				</div>
 				<div class="modal-footer">
