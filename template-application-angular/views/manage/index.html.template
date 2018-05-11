@@ -35,7 +35,11 @@
 					<td>{{$index + 1}}</td>
 #foreach ($property in $properties) 
 #if($property.widgetIsMajor)
+#if($property.widgetType == "DROPDOWN")
+					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
+#else
 					<td>{{next.${property.name}}}</td>
+#end
 #end
 #end
 					<td>
@@ -62,10 +66,17 @@
 					<form ng-hide="actionType === 'delete'">
 #foreach ($property in $properties)
 #if(!$property.dataAutoIncrement)
+#if($property.widgetType == "DROPDOWN")
+						<div class="form-group">
+							<label>${property.widgetLabel}</label>
+							<select ng-options="o.${property.widgetDropdownKey} as o.${property.widgetDropdownValue} for o in ${property.name.toLowerCase()}Options" ng-model="entity.${property.name}"></select>
+						</div>
+#else
 						<div class="form-group">
 							<label>${property.widgetLabel}</label>
 							<input type="${property.widgetType}" class="form-control" placeholder="Enter ${property.widgetLabel.toLowerCase()}" ng-model="entity.${property.name}">
 						</div>
+#end
 #end
 #end
 					</form>

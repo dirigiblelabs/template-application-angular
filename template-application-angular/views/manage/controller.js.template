@@ -3,6 +3,26 @@ angular.module('page', []);
 angular.module('page').controller('PageController', function ($scope, $http) {
 
 	var api = '/services/v3/js/${projectName}/api/${name}.js';
+#foreach ($property in $properties)
+#if($property.widgetType == "DROPDOWN")
+	var ${property.name.toLowerCase()}OptionsApi = '/services/v3/js/${projectName}/api/${property.relationshipEntityName}.js';
+#end
+#end
+
+#foreach ($property in $properties)
+#if($property.widgetType == "DROPDOWN")
+	$scope.${property.name.toLowerCase()}Options = [];
+#end
+#end
+
+#foreach ($property in $properties)
+#if($property.widgetType == "DROPDOWN")
+	${dollar}http.get(${property.name.toLowerCase()}OptionsApi)
+	.success(function(data) {
+		$scope.${property.name.toLowerCase()}Options = data;
+	});
+#end
+#end
 
 	function load() {
 		$http.get(api)
@@ -65,6 +85,19 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 			alert(JSON.stringify(data));
 		});
 	};
+
+#foreach ($property in $properties)
+#if($property.widgetType == "DROPDOWN")
+	${dollar}scope.${property.name.toLowerCase()}OptionValue = function(optionKey) {
+		for (var i = 0 ; i < ${dollar}scope.${property.name.toLowerCase()}Options.length; i ++) {
+			if (${dollar}scope.${property.name.toLowerCase()}Options[i].${property.widgetDropdownKey} === optionKey) {
+				return ${dollar}scope.${property.name.toLowerCase()}Options[i].${property.widgetDropdownValue};
+			}
+		}
+		return null;
+	};
+#end
+#end
 
 	function toggleEntityModal() {
 		$('#entityModal').modal('toggle');

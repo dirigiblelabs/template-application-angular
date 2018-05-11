@@ -30,7 +30,7 @@ exports.getTemplate = function() {
 			'action': 'generate',
 			'rename': 'data/{{fileNameBase}}.schema'
 		}, {
-			'location': '/template-application-angular/data/dao/application.js.template', 
+			'location': '/template-application-angular/data/dao/entity.js.template', 
 			'action': 'generate',
 			'rename': 'data/dao/{{fileName}}.js',
 			'collection': 'dataModels',
