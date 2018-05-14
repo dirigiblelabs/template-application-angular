@@ -69,7 +69,7 @@
 #if($property.widgetType == "DROPDOWN")
 						<div class="form-group">
 							<label>${property.widgetLabel}</label>
-							<select class="form-control" ng-options="o.${property.widgetDropdownKey} as o.${property.widgetDropdownValue} for o in ${property.name.toLowerCase()}Options" ng-model="entity.${property.name}"></select>
+							<select class="form-control" ng-options="o.${property.widgetDropDownKey} as o.${property.widgetDropDownValue} for o in ${property.name.toLowerCase()}Options" ng-model="entity.${property.name}"></select>
 						</div>
 #elseif($property.widgetType == "TEXTAREA")
 						<div class="form-group">
