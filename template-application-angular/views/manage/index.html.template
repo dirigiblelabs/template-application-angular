@@ -76,6 +76,11 @@
 							<label>${property.widgetLabel}</label>
 							<textarea class="form-control" placeholder="Enter ${property.widgetLabel.toLowerCase()}" ng-model="entity.${property.name}"></textarea>
 						</div>
+#elseif($property.widgetType == "NUMBER")
+						<div class="form-group">
+							<label>${property.widgetLabel}</label>
+							<input type="number" class="form-control" placeholder="Enter ${property.widgetLabel.toLowerCase()}" ng-model="entity.${property.name}">
+						</div>
 #else
 						<div class="form-group">
 							<label>${property.widgetLabel}</label>
