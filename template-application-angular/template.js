@@ -75,32 +75,18 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-angular/views/manage/view.js.template', 
 			'action': 'generate',
-			'collection': 'models',
+			'collection': 'uiManageModels',
 			'rename': 'views/{{fileName}}/view.js'
 		}, {
 			'location': '/template-application-angular/views/manage/menu/item.extension.template', 
 			'action': 'generate',
 			'rename': 'views/{{fileName}}/menu/item.extension',
-			'collection': 'models'
+			'collection': 'uiManageModels'
 		}, {
 			'location': '/template-application-angular/views/manage/menu/item.js.template', 
 			'action': 'generate',
 			'rename': 'views/{{fileName}}/menu/item.js',
-			'collection': 'models'
-		}, {
-			'location': '/template-application-angular/views/list.html.template', 
-			'action': 'generate',
-			'rename': 'views/{{fileName}}.html',
-			'start' : '[[',
-			'end' : ']]',
-			'collection': 'uiListModels'
-		}, {
-			'location': '/template-application-angular/views/display.html.template', 
-			'action': 'generate',
-			'rename': 'views/{{fileName}}.html',
-			'start' : '[[',
-			'end' : ']]',
-			'collection': 'uiDisplayModels'
+			'collection': 'uiManageModels'
 		}, {
 			'location': '/template-application-angular/resources/templates/menu.html.template', 
 			'action': 'generate',
