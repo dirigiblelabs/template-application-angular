@@ -11,28 +11,13 @@ exports.getTemplate = function() {
 			'rename': 'api/http.js',
 		}, {
 			'_section': 'API',
-			'location': '/template-application-angular/api/application.js.template', 
+			'location': '/template-application-angular/api/entity.js.template', 
 			'action': 'generate',
 			'rename': 'api/{{fileName}}.js',
 			'collection': 'models',
 			'engine': 'velocity'
-		}, {
-			'_section': 'API',
-			'location': '/template-application-angular/api/shell/menu.js.template', 
-			'action': 'generate',
-			'rename': 'api/shell/menu.js'
-		}, {
-			'_section': 'API',
-			'location': '/template-application-angular/api/shell/perspectives.js.template', 
-			'action': 'generate',
-			'rename': 'api/shell/perspectives.js'
-		}, {
-			'_section': 'API',
-			'location': '/template-application-angular/api/shell/views.js.template', 
-			'action': 'generate',
-			'rename': 'api/shell/views.js'
 		},
-
+		
 		
 		
 		{
@@ -58,7 +43,7 @@ exports.getTemplate = function() {
 			'rename': 'extensions/perspective/home.extension'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/perspective/application.js.template', 
+			'location': '/template-application-angular/extensions/perspective/home.js.template', 
 			'action': 'generate',
 			'rename': 'extensions/perspective/home.js'
 		}, {
@@ -66,11 +51,6 @@ exports.getTemplate = function() {
 			'location': '/template-application-angular/extensions/point/menu.extensionpoint.template', 
 			'action': 'generate',
 			'rename': 'extensions/point/menu.extensionpoint'
-		}, {
-			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/point/perspective.extensionpoint.template', 
-			'action': 'generate',
-			'rename': 'extensions/point/perspective.extensionpoint'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/point/view.extensionpoint.template', 
@@ -118,42 +98,6 @@ exports.getTemplate = function() {
 			'action': 'generate',
 			'rename': 'views/{{fileName}}/menu/item.js',
 			'collection': 'uiManageModels'
-		},
-		
-		
-		
-		{
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/templates/menu.html.template', 
-			'action': 'generate',
-			'start' : '[[',
-			'end' : ']]',
-			'rename': 'resources/templates/menu.html'
-		}, {
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/templates/sidebar.html.template', 
-			'action': 'copy',
-			'rename': 'resources/templates/sidebar.html'
-		}, {
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/js/message-hub.js.template', 
-			'action': 'copy',
-			'rename': 'resources/js/message-hub.js'
-		}, {
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/js/ui-bootstrap-tpls-0.14.3.min.js.template', 
-			'action': 'copy',
-			'rename': 'resources/js/ui-bootstrap-tpls-0.14.3.min.js'
-		}, {
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/js/ui-core-ng-modules.js.template', 
-			'action': 'generate',
-			'rename': 'resources/js/ui-core-ng-modules.js'
-		}, {
-			'_section': 'UI - Resources',
-			'location': '/template-application-angular/resources/js/ui-layout.js.template', 
-			'action': 'generate',
-			'rename': 'resources/js/ui-layout.js'
 		},
 		
 		
