@@ -63,15 +63,15 @@ exports.getTemplate = function() {
 			'rename': 'extensions/menu.extensionpoint'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/view.extensionpoint.template', 
+			'location': '/template-application-angular/extensions/views/manage/view.extensionpoint.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/view.extensionpoint'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/entity.extension.template', 
+			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}.extension',
-			'collection': 'models'
+			'collection': 'uiManageModels'
 		},
 		
 		
