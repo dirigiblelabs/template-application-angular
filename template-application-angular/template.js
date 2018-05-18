@@ -122,6 +122,9 @@ exports.getTemplate = function() {
 			'name': 'extensionName',
 			'label': 'Extension Name'
 		}, {
+			'name': 'launchpadName',
+			'label': 'Launchpad Name'
+		}, {
 			'name': 'brand',
 			'label': 'Brand'
 		}]
