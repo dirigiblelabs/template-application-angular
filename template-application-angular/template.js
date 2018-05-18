@@ -63,9 +63,9 @@ exports.getTemplate = function() {
 			'rename': 'extensions/menu.extensionpoint'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/manage/view.extensionpoint.template', 
+			'location': '/template-application-angular/extensions/views/manage/view-manage.extensionpoint.template', 
 			'action': 'generate',
-			'rename': 'extensions/views/view.extensionpoint'
+			'rename': 'extensions/views/view-manage.extensionpoint'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
