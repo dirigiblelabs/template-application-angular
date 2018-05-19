@@ -89,7 +89,8 @@ exports.getTemplate = function() {
 			'location': '/template-application-angular/extensions/views/master/entity-view-detail.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}-view-detail.extension',
-			'collection': 'uiManageDetailsModels'
+			'collection': 'uiManageDetailsModels',
+			'engine': 'velocity'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/master/entity.extension.template', 
