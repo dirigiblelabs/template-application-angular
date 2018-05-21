@@ -14,7 +14,7 @@ exports.getView = function() {
 		'name': '{{name}}',
 		'label': '{{name}}',
 		'factory': 'frame',
-		// 'region': 'center-bottom',
+		'region': 'center-top',
 		'link': '/services/v3/web/{{projectName}}/views/master/{{name}}/master/index.html'
 	};
 };
