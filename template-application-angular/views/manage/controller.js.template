@@ -1,6 +1,29 @@
 #set($dollar = '$' )
 angular.module('page', []);
-angular.module('page').controller('PageController', function ($scope, $http) {
+angular.module('page')
+.factory('$messageHub', [function(){
+	var messageHub = new FramesMessageHub();
+
+	var message = function(evtName, data){
+		messageHub.post({data: data}, '${launchpadName}.${projectName}.' + evtName);
+	};
+
+	var on = function(topic, callback){
+		messageHub.subscribe(callback, topic);
+	};
+
+	return {
+		message: message,
+		on: on,
+		onRefresh: function(callback) {
+			on('${launchpadName}.${projectName}.refresh', callback);
+		},
+		refresh: function(data) {
+			message('refresh', data);
+		}
+	};
+}])
+.controller('PageController', function ($scope, $http) {
 
 	var api = '/services/v3/js/${projectName}/api/${name}.js';
 #foreach ($property in $properties)
