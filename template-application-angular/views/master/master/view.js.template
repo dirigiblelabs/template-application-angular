@@ -11,8 +11,8 @@
 exports.getView = function() {
 	return {
 		'id': '{{name}}',
-		'name': '{{name}}',
-		'label': '{{name}}',
+		'name': '{{menuLabel}}',
+		'label': '{{menuLabel}}',
 		'factory': 'frame',
 		'region': 'center-top',
 		'type': 'master',
