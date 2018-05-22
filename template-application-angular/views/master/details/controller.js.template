@@ -5,18 +5,22 @@ angular.module('page').controller('PageController', function ($scope, $http) {
 	var api = '/services/v3/js/${projectName}/api/${name}.js';
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
+#if($property.widgetService)
+	var ${property.name.toLowerCase()}OptionsApi = '${property.widgetService}';
+#else
 	var ${property.name.toLowerCase()}OptionsApi = '/services/v3/js/${projectName}/api/${property.relationshipEntityName}.js';
 #end
 #end
-
+#end
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
+
 	$scope.${property.name.toLowerCase()}Options = [];
 #end
 #end
-
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
+
 	${dollar}http.get(${property.name.toLowerCase()}OptionsApi)
 	.success(function(data) {
 		$scope.${property.name.toLowerCase()}Options = data;
