@@ -16,7 +16,7 @@ angular.module('page')
 		message: message,
 		on: on,
 #foreach ($property in $properties)
-#if($property.widgetType == "DROPDOWN")
+#if($property.widgetType == "DROPDOWN" && $property.relationshipEntityName)
 		on${property.relationshipEntityName}Modified: function(callback) {
 			on('${launchpadName}.${projectName}.${property.relationshipEntityName}.modified', callback);
 		},
@@ -163,7 +163,7 @@ angular.module('page')
 #end
 
 #foreach ($property in $properties)
-#if($property.widgetType == "DROPDOWN")
+#if($property.widgetType == "DROPDOWN" && $property.relationshipEntityName)
 	${dollar}messageHub.on${property.relationshipEntityName}Modified(${property.name.toLowerCase()}OptionsLoad);
 #end
 #end
