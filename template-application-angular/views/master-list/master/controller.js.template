@@ -48,6 +48,14 @@ angular.module('page')
 	$scope.${property.name.toLowerCase()}Options = [];
 #end
 #end
+
+	function load() {
+		${dollar}http.get(api)
+		.success(function(data) {
+			$scope.data = data;
+		});
+	}
+	load();
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
 
