@@ -70,6 +70,12 @@ exports.getTemplate = function() {
 			'rename': 'extensions/views/view-manage.extensionpoint'
 		}, {
 			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/list/entity.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{fileName}}.extension',
+			'collection': 'uiListModels'
+		}, {
+			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}.extension',
@@ -135,6 +141,42 @@ exports.getTemplate = function() {
 			'action': 'generate',
 			'rename': 'views/{{fileName}}/menu/item.js',
 			'collection': 'uiManageModels'
+		},
+
+
+
+		{
+			'_section': 'UI - List Models',
+			'location': '/template-application-angular/views/list/index.html.template', 
+			'action': 'generate',
+			'rename': 'views/{{fileName}}/index.html',
+			'collection': 'uiListModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Models',
+			'location': '/template-application-angular/views/list/controller.js.template', 
+			'action': 'generate',
+			'rename': 'views/{{fileName}}/controller.js',
+			'collection': 'uiListModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Models',
+			'location': '/template-application-angular/views/list/view.js.template', 
+			'action': 'generate',
+			'collection': 'uiListModels',
+			'rename': 'views/{{fileName}}/view.js'
+		}, {
+			'_section': 'UI - List Models',
+			'location': '/template-application-angular/views/list/menu/item.extension.template', 
+			'action': 'generate',
+			'rename': 'views/{{fileName}}/menu/item.extension',
+			'collection': 'uiListModels'
+		}, {
+			'_section': 'UI - List Models',
+			'location': '/template-application-angular/views/list/menu/item.js.template', 
+			'action': 'generate',
+			'rename': 'views/{{fileName}}/menu/item.js',
+			'collection': 'uiListModels'
 		},
 
 
