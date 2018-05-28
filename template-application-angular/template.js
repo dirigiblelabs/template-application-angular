@@ -17,9 +17,9 @@ exports.getTemplate = function() {
 			'collection': 'models',
 			'engine': 'velocity'
 		},
-		
-		
-		
+
+
+
 		{
 			'_section': 'Data',
 			'location': '/template-application-angular/data/application.schema.template', 
@@ -33,9 +33,9 @@ exports.getTemplate = function() {
 			'collection': 'models',
 			'engine': 'velocity'
 		},
-		
-		
-		
+
+
+
 		{
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/perspective/perspective.extension.template', 
@@ -82,6 +82,31 @@ exports.getTemplate = function() {
 			'collection': 'uiManageModels'
 		}, {
 			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/master-list/entity-view.extensionpoint.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{fileName}}-view.extensionpoint',
+			'collection': 'uiListMasterModels'
+		}, {
+			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/master-list/entity-view-master.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{fileName}}-view-master.extension',
+			'collection': 'uiListMasterModels'
+		}, {
+			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/master-list/entity-view-detail.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{fileName}}-view-detail.extension',
+			'collection': 'uiListDetailsModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/master-list/entity.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{fileName}}.extension',
+			'collection': 'uiListMasterModels'
+		}, {
+			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/master-manage/entity-view.extensionpoint.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}-view.extensionpoint',
@@ -106,9 +131,9 @@ exports.getTemplate = function() {
 			'rename': 'extensions/views/{{fileName}}.extension',
 			'collection': 'uiManageMasterModels'
 		},
-		
-		
-		
+
+
+
 		{
 			'_section': 'UI - Manage Models',
 			'location': '/template-application-angular/views/manage/index.html.template', 
@@ -177,6 +202,66 @@ exports.getTemplate = function() {
 			'action': 'generate',
 			'rename': 'views/{{fileName}}/menu/item.js',
 			'collection': 'uiListModels'
+		},
+
+
+
+		{
+			'_section': 'UI - List Master Models',
+			'location': '/template-application-angular/views/master-list/index.html.template', 
+			'action': 'generate',
+			'rename': 'views/master/{{fileName}}/index.html',
+			'collection': 'uiListMasterModels',
+		}, {
+			'_section': 'UI - List Master Models',
+			'location': '/template-application-angular/views/master-list/view.js.template', 
+			'action': 'generate',
+			'rename': 'views/master/{{fileName}}/view.js',
+			'collection': 'uiListMasterModels'
+		}, {
+			'_section': 'UI - List Master Models',
+			'location': '/template-application-angular/views/master-list/master/index.html.template', 
+			'action': 'generate',
+			'rename': 'views/master/{{fileName}}/master/index.html',
+			'collection': 'uiListMasterModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Master Models',
+			'location': '/template-application-angular/views/master-list/master/controller.js.template', 
+			'action': 'generate',
+			'rename': 'views/master/{{fileName}}/master/controller.js',
+			'collection': 'uiListMasterModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Master Models',
+			'location': '/template-application-angular/views/master-list/master/view.js.template', 
+			'action': 'generate',
+			'rename': 'views/master/{{fileName}}/master/view.js',
+			'collection': 'uiListMasterModels'
+		},
+
+
+
+		{
+			'_section': 'UI - List Details Models',
+			'location': '/template-application-angular/views/master-list/details/index.html.template', 
+			'action': 'generate',
+			'rename': 'views/master/details/{{fileName}}/index.html',
+			'collection': 'uiListDetailsModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Details Models',
+			'location': '/template-application-angular/views/master-list/details/controller.js.template', 
+			'action': 'generate',
+			'rename': 'views/master/details/{{fileName}}/controller.js',
+			'collection': 'uiListDetailsModels',
+			'engine': 'velocity'
+		}, {
+			'_section': 'UI - List Details Models',
+			'location': '/template-application-angular/views/master-list/details/view.js.template', 
+			'action': 'generate',
+			'rename': 'views/master/details/{{fileName}}/view.js',
+			'collection': 'uiListDetailsModels'
 		},
 
 

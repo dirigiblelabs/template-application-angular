@@ -33,7 +33,7 @@
 				<tr ng-repeat="next in data">
 					<td>{{$index + 1}}</td>
 #foreach ($property in $properties) 
-#if($property.widgetIsMajor)
+#if($property.widgetIsMajor && $property.relationshipType != "COMPOSITION")
 #if($property.widgetType == "DROPDOWN")
 					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
 #else
@@ -42,7 +42,8 @@
 #end
 #end
 					<td>
-						<i class="close fa fa-2x fa-search" ng-click="openInfoDialog(next)"></i>
+						<i class="close fa fa-2x fa-remove" ng-click="openDeleteDialog(next)"></i>
+						<i class="close fa fa-2x fa-pencil" ng-click="openEditDialog(next)" style="margin-right: 0.5em"></i>
 					</td>
 				</tr>
 			</tbody>
@@ -59,9 +60,9 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form ng-hide="actionType === 'delete'">
 #foreach ($property in $properties)
-#if(!$property.dataAutoIncrement)
+#if(!$property.dataAutoIncrement && $property.relationshipType != "COMPOSITION")
 #if($property.widgetType == "DROPDOWN")
 						<div class="form-group">
 							<label>#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</label>
