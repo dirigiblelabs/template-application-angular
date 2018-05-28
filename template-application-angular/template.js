@@ -82,26 +82,26 @@ exports.getTemplate = function() {
 			'collection': 'uiManageModels'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/master/entity-view.extensionpoint.template', 
+			'location': '/template-application-angular/extensions/views/master-manage/entity-view.extensionpoint.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}-view.extensionpoint',
 			'collection': 'uiManageMasterModels'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/master/entity-view-master.extension.template', 
+			'location': '/template-application-angular/extensions/views/master-manage/entity-view-master.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}-view-master.extension',
 			'collection': 'uiManageMasterModels'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/master/entity-view-detail.extension.template', 
+			'location': '/template-application-angular/extensions/views/master-manage/entity-view-detail.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}-view-detail.extension',
 			'collection': 'uiManageDetailsModels',
 			'engine': 'velocity'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/master/entity.extension.template', 
+			'location': '/template-application-angular/extensions/views/master-manage/entity.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}.extension',
 			'collection': 'uiManageMasterModels'
