@@ -15,6 +15,9 @@ angular.module('page')
 	return {
 		message: message,
 		on: on,
+		onEntityRefresh: function(callback) {
+			on('${launchpadName}.${projectName}.${name}.refresh', callback);
+		},
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN" && $property.relationshipEntityName)
 		on${property.relationshipEntityName}Modified: function(callback) {
@@ -79,6 +82,7 @@ angular.module('page')
 		toggleEntityModal();
 	};
 
+	$messageHub.onEntityRefresh(load);
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
 	${dollar}scope.${property.name.toLowerCase()}OptionValue = function(optionKey) {
