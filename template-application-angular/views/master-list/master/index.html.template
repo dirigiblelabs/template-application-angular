@@ -23,7 +23,7 @@
 					<th>#</th>
 #foreach ($property in $properties)
 #if($property.widgetIsMajor)
-					<th class="text-capitalize">${property.name}</th>
+					<th class="text-capitalize">#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</th>
 #end
 #end
 					<th></th>
