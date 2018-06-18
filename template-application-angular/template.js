@@ -40,24 +40,28 @@ exports.getTemplate = function() {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/perspective/perspective.extension.template', 
 			'action': 'generate',
-			'rename': 'extensions/perspective/perspective.extension'
+			'rename': 'extensions/perspective/{{fileName}}/perspective.extension',
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/perspective/perspective.js.template', 
 			'action': 'generate',
-			'rename': 'extensions/perspective/perspective.js',
-			'engine': 'velocity'
+			'rename': 'extensions/perspective/{{fileName}}/perspective.js',
+			'engine': 'velocity',
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/tiles/tiles.extension.template', 
 			'action': 'generate',
-			'rename': 'extensions/tiles/tiles.extension'
+			'rename': 'extensions/tiles/{{fileName}}/tiles.extension',
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/tiles/tiles.js.template', 
 			'action': 'generate',
-			'rename': 'extensions/tiles/tiles.js',
-			'engine': 'velocity'
+			'rename': 'extensions/tiles/{{fileName}}/tiles.js',
+			'engine': 'velocity',
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/menu.extensionpoint.template', 
@@ -67,7 +71,8 @@ exports.getTemplate = function() {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/manage/view-manage.extensionpoint.template', 
 			'action': 'generate',
-			'rename': 'extensions/views/view-manage.extensionpoint'
+			'rename': 'extensions/views/{{fileName}}-view-manage.extensionpoint',
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/list/entity.extension.template', 
@@ -79,7 +84,7 @@ exports.getTemplate = function() {
 			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}.extension',
-			'collection': 'uiManageModels'
+			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/master-list/entity-view.extensionpoint.template', 
@@ -328,9 +333,10 @@ exports.getTemplate = function() {
 
 		{
 			'_section': 'UI - Index.html',
-			'location': '/template-application-angular/index.html.template', 
+			'location': '/template-application-angular/perspectives/index.html.template', 
 			'action': 'generate',
-			'rename': 'index.html'
+			'rename': 'perspectives/{{fileName}}/index.html',
+			'collection': 'uiPerspectives'
 		}],
 		'parameters': [{
 			'name': 'extensionName',
@@ -341,15 +347,6 @@ exports.getTemplate = function() {
 		}, {
 			'name': 'brand',
 			'label': 'Brand'
-		}, {
-			'name': 'moduleName',
-			'label': 'Module Name'
-		}, {
-			'name': 'moduleIcon',
-			'label': 'Module Icon'
-		}, {
-			'name': 'moduleOrder',
-			'label': 'Module Order'
 		}]
 	};
 };

@@ -10,19 +10,19 @@
 
 exports.getTile = function() {
 	return {
-#if($moduleName)
-		'name': '${moduleName}',
+#if($perspectiveName)
+		'name': '${perspectiveName}',
 #else
 		'name': '${projectName}',
 #end
-#if($moduleIcon)
-		'icon': '${moduleIcon}',
+#if($perspectiveIcon)
+		'icon': '${perspectiveIcon}',
 #else
 		'icon': 'life-ring',
  #end
-		'location': '/services/v3/web/${projectName}/index.html',
-#if($moduleOrder)
-		'order': '${moduleOrder}'
+		'location': '/services/v3/web/${projectName}/perspectives/${fileName}/index.html',
+#if($perspectiveOrder)
+		'order': '${perspectiveOrder}'
 #else
 		'order': 999
 #end
