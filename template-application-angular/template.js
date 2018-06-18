@@ -40,27 +40,39 @@ exports.getTemplate = function() {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/perspective/perspective.extension.template', 
 			'action': 'generate',
-			'rename': 'extensions/perspective/{{fileName}}/perspective.extension',
+			'rename': 'extensions/perspective/{{perspectiveName}}/perspective.extension',
 			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/perspective/perspective.js.template', 
 			'action': 'generate',
-			'rename': 'extensions/perspective/{{fileName}}/perspective.js',
+			'rename': 'extensions/perspective/{{perspectiveName}}/perspective.js',
 			'engine': 'velocity',
 			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/tiles/tiles.extension.template', 
 			'action': 'generate',
-			'rename': 'extensions/tiles/{{fileName}}/tiles.extension',
+			'rename': 'extensions/tiles/{{perspectiveName}}/tiles.extension',
 			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/tiles/tiles.js.template', 
 			'action': 'generate',
-			'rename': 'extensions/tiles/{{fileName}}/tiles.js',
+			'rename': 'extensions/tiles/{{perspectiveName}}/tiles.js',
 			'engine': 'velocity',
+			'collection': 'uiPerspectives'
+		}, {
+			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/manage/view-manage.extensionpoint.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{perspectiveName}}/perspective.extensionpoint',
+			'collection': 'uiPerspectives'
+		}, {
+			'_section': 'Extensions',
+			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/views/{{perspectiveName}}/{{fileName}}.extension',
 			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
@@ -69,22 +81,10 @@ exports.getTemplate = function() {
 			'rename': 'extensions/menu.extensionpoint'
 		}, {
 			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/manage/view-manage.extensionpoint.template', 
-			'action': 'generate',
-			'rename': 'extensions/views/{{fileName}}-view-manage.extensionpoint',
-			'collection': 'uiPerspectives'
-		}, {
-			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/list/entity.extension.template', 
 			'action': 'generate',
 			'rename': 'extensions/views/{{fileName}}.extension',
 			'collection': 'uiListModels'
-		}, {
-			'_section': 'Extensions',
-			'location': '/template-application-angular/extensions/views/manage/entity.extension.template', 
-			'action': 'generate',
-			'rename': 'extensions/views/{{fileName}}.extension',
-			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/extensions/views/master-list/entity-view.extensionpoint.template', 
@@ -335,7 +335,7 @@ exports.getTemplate = function() {
 			'_section': 'UI - Index.html',
 			'location': '/template-application-angular/perspectives/index.html.template', 
 			'action': 'generate',
-			'rename': 'perspectives/{{fileName}}/index.html',
+			'rename': 'perspectives/{{perspectiveName}}/index.html',
 			'collection': 'uiPerspectives'
 		}],
 		'parameters': [{
