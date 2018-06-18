@@ -1,5 +1,5 @@
 {
-	'description': '{{name}} tiles',
+	'description': '{{perspectiveName}} tiles',
 	'extensionPoint': 'launchpad-{{extensionName}}-tiles',
-	'module': '{{projectName}}/extensions/tiles/{{fileName}}/tiles.js'
+	'module': '{{projectName}}/ui/{{perspectiveName}}/extensions/tile/tile.js'
 }

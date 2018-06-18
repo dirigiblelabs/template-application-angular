@@ -66,7 +66,7 @@ exports.getTemplate = function() {
 			'_section': 'Extensions',
 			'location': '/template-application-angular/ui/perspectives/views/manage/extensions/view.extensionpoint.template', 
 			'action': 'generate',
-			'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/view.extensionpoint',
+			'rename': 'ui/{{perspectiveName}}/extensions/view.extensionpoint',
 			'collection': 'uiPerspectives'
 		}, {
 			'_section': 'Extensions',
