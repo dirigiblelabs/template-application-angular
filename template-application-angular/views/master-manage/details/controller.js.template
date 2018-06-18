@@ -1,5 +1,5 @@
 #set($dollar = '$' )
-angular.module('page', []);
+angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('$messageHub', [function(){
 	var messageHub = new FramesMessageHub();
@@ -49,6 +49,12 @@ angular.module('page')
 #end
 #end
 #end
+
+	$scope.dateOptions = {
+		startingDay: 1
+	};
+	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
+	$scope.dateFormat = $scope.dateFormats[0];
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
 
@@ -152,6 +158,18 @@ angular.module('page')
 		});
 	};
 
+#foreach ($property in $properties)
+#if($property.widgetType == "DATE")
+	${dollar}scope.${property.name.toLowerCase()}OpenCalendar = function(${dollar}event) {
+		${dollar}scope.${property.name.toLowerCase()}CalendarStatus.opened = true;
+	};
+
+	${dollar}scope.${property.name.toLowerCase()}CalendarStatus = {
+		opened: false
+	};
+
+#end
+#end
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
 	${dollar}scope.${property.name.toLowerCase()}OptionValue = function(optionKey) {

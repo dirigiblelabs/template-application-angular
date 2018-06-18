@@ -36,6 +36,8 @@
 #if($property.widgetIsMajor)
 #if($property.widgetType == "DROPDOWN")
 					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
+#elseif($property.widgetType == "DATE")
+					<td>{{next.${property.name} | date:dateFormat}}</td>
 #else
 					<td>{{next.${property.name}}}</td>
 #end

@@ -48,6 +48,12 @@ angular.module('page')
 	$scope.${property.name.toLowerCase()}Options = [];
 #end
 #end
+
+	$scope.dateOptions = {
+		startingDay: 1
+	};
+	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
+	$scope.dateFormat = $scope.dateFormats[0];
 #foreach ($property in $properties)
 #if($property.widgetType == "DROPDOWN")
 

@@ -100,10 +100,10 @@
 										class="btn btn-default"
 										ng-click="${property.name.toLowerCase()}OpenCalendar($event)"
 									>
-										<i class="glyphicon glyphicon-calendar"></i>
+										<i class="fa fa-calendar"></i>
 									</button>
 								</span>
-		           	</p>
+		           			</p>
 						</div>
 #else
 						<div class="form-group">

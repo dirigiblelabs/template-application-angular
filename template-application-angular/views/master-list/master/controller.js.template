@@ -52,6 +52,12 @@ angular.module('page')
 #end
 #end
 
+	$scope.dateOptions = {
+		startingDay: 1
+	};
+	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
+	$scope.dateFormat = $scope.dateFormats[0];
+
 	function load() {
 		${dollar}http.get(api)
 		.success(function(data) {

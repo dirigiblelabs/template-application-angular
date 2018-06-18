@@ -37,6 +37,8 @@
 #if($property.widgetIsMajor)
 #if($property.widgetType == "DROPDOWN")
 					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
+#elseif($property.widgetType == "DATE")
+					<td>{{next.${property.name} | date:dateFormat}}</td>
 #else
 					<td>{{next.${property.name}}}</td>
 #end
@@ -80,6 +82,28 @@
 						<div class="form-group">
 							<label>#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</label>
 							<input type="number" class="form-control" placeholder="Enter #if($property.widgetLabel)${property.widgetLabel.toLowerCase()}#else${property.name.toLowerCase()}#end" ng-model="entity.${property.name}">
+						</div>
+#elseif($property.widgetType == "DATE")
+						<div class="form-group">
+							<label>#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</label>
+							<p class="input-group">
+								<input type="text" 
+									ng-model="entity.${property.name}"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="${property.name.toLowerCase()}CalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="${property.name.toLowerCase()}OpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 #else
 						<div class="form-group">
