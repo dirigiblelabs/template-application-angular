@@ -16,7 +16,6 @@
 #else
  {
 #end
-                        'name': '${property.dataName}',
                         'type': '${property.dataType}',
 #if($property.dataLength)
                         'length': ${property.dataLength},
@@ -31,12 +30,13 @@
                         'precision': '${property.dataPrecision}',
 #end
 #if($property.dataScale)
-                        'scale': '${property.dataScale}'
+                        'scale': '${property.dataScale}',
 #end
 #if($property.dataNotNull)
 #else
-                        'nullable': true
+                        'nullable': true,
 #end
+                        'name': '${property.dataName}'
                     }#if($foreach.hasNext),#end
 #end
 ]
