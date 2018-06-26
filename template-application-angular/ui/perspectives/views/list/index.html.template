@@ -38,6 +38,8 @@
 					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
 #elseif($property.widgetType == "DATE")
 					<td>{{next.${property.name} | date:dateFormat}}</td>
+#elseif($property.widgetType == "CHECKBOX")
+					<td><input type="checkbox" ng-model="next.${property.name}" disabled></td>
 #else
 					<td>{{next.${property.name}}}</td>
 #end
