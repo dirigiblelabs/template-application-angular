@@ -16,11 +16,47 @@ exports.getTemplate = function(parameters) {
 		}, {
 			'name': 'launchpadName',
 			'label': 'Launchpad',
-			'placeholder': 'Launchpad project name'
+			'placeholder': 'Launchpad project name',
+			'ui': {
+				'hide': {
+					'property': 'includeLaunchpad',
+					'value': true
+				}
+			}
 		}, {
 			'name': 'includeLaunchpad',
 			'label': 'Embedded',
 			'type': 'checkbox'
+		}, {
+			'name': 'title',
+			'label': 'Title',
+			'placeholder': 'Launchpad title',
+			'ui': {
+				'hide': {
+					'property': 'includeLaunchpad',
+					'value': false
+				}
+			}
+		}, {
+			'name': 'subTitle',
+			'label': 'Sub-title',
+			'placeholder': 'Launchpad sub-title',
+			'ui': {
+				'hide': {
+					'property': 'includeLaunchpad',
+					'value': false
+				}
+			}
+		}, {
+			'name': 'description',
+			'label': 'Description',
+			'placeholder': 'Launchpad description',
+			'ui': {
+				'hide': {
+					'property': 'includeLaunchpad',
+					'value': false
+				}
+			}
 		}, {
 			'name': 'brand',
 			'label': 'Brand',

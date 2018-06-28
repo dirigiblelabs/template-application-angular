@@ -11,6 +11,7 @@ function getMaster(parameters) {
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/views/master/{{fileName}}/index.html',
 		'collection': 'uiManageMasterModels',
+		'engine': 'velocity'
 	}, {
 		'location': '/template-application-angular/ui/perspectives/views/master-manage/extensions/view.js.template', 
 		'action': 'generate',

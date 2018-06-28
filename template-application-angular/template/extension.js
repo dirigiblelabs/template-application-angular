@@ -1,19 +1,22 @@
 exports.getSources = function(parameters) {
 	var sources = [];
-	sources = sources.concat(getExtensionPerspectives(parameters));
-	sources = sources.concat(getExtensionPrimaryModels(parameters));
-	sources = sources.concat(getExtensionListModels(parameters));
-	sources = sources.concat(getExtensionManageModels(parameters));
-	sources = sources.concat(getExtensionListMasterDetailModels(parameters));
+	sources = sources.concat(getPerspectives(parameters));
+	sources = sources.concat(getPrimaryModels(parameters));
+	sources = sources.concat(getListModels(parameters));
+	sources = sources.concat(getManageModels(parameters));
+	sources = sources.concat(getListMasterDetailModels(parameters));
+	sources = sources.concat(getManageMasterDetailModels(parameters));
 	sources = sources.concat(getMenu(parameters));
+	sources = sources.concat(getLaunchpad(parameters));
 	return sources;
 };
 
-function getExtensionPerspectives(parameters) {
+function getPerspectives(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/extensions/perspective/perspective.extension.template', 
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/extensions/perspective/perspective.extension',
+		'engine': 'velocity',
 		'collection': 'uiPerspectives'
 	}, {
 		'location': '/template-application-angular/ui/perspectives/extensions/perspective/perspective.js.template', 
@@ -29,7 +32,7 @@ function getExtensionPerspectives(parameters) {
 	}];
 }
 
-function getExtensionPrimaryModels(parameters) {
+function getPrimaryModels(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/extensions/tile/tile.extension.template', 
 		'action': 'generate',
@@ -44,7 +47,7 @@ function getExtensionPrimaryModels(parameters) {
 	}];
 }
 
-function getExtensionListModels(parameters) {
+function getListModels(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/views/list/extensions/entity.extension.template', 
 		'action': 'generate',
@@ -53,7 +56,7 @@ function getExtensionListModels(parameters) {
 	}];
 }
 
-function getExtensionManageModels(parameters) {
+function getManageModels(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/views/manage/extensions/entity.extension.template', 
 		'action': 'generate',
@@ -62,7 +65,7 @@ function getExtensionManageModels(parameters) {
 	}];
 }
 
-function getExtensionListMasterDetailModels(parameters) {
+function getListMasterDetailModels(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/views/master-list/extensions/entity-view.extensionpoint.template', 
 		'action': 'generate',
@@ -87,7 +90,7 @@ function getExtensionListMasterDetailModels(parameters) {
 	}];
 }
 
-function getExtensionManageMasterDetailModels(parameters) {
+function getManageMasterDetailModels(parameters) {
 	return [{
 		'location': '/template-application-angular/ui/perspectives/views/master-manage/extensions/entity-view.extensionpoint.template', 
 		'action': 'generate',
@@ -118,4 +121,28 @@ function getMenu(parameters) {
 		'action': 'generate',
 		'rename': 'extensions/menu.extensionpoint'
 	}];
+}
+
+function getLaunchpad(parameters) {
+	var sources = [];
+	if (parameters && parameters.includeLaunchpad) {
+		sources = [{
+			'location': '/template-application-angular/extensions/perspective.extensionpoint.template', 
+			'action': 'generate',
+			'rename': 'extensions/perspective.extensionpoint'
+		}, {
+			'location': '/template-application-angular/extensions/perspective.extension.template', 
+			'action': 'generate',
+			'rename': 'extensions/perspective.extension'
+		}, {
+			'location': '/template-application-angular/extensions/perspective.js.template', 
+			'action': 'generate',
+			'rename': 'extensions/perspective.js'
+		}, {
+			'location': '/template-application-angular/extensions/tiles.extensionpoint.template', 
+			'action': 'generate',
+			'rename': 'extensions/tiles.extensionpoint'
+		}];
+	}
+	return sources;
 }
