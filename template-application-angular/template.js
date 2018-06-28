@@ -11,17 +11,20 @@ exports.getTemplate = function(parameters) {
 		'sources': getSources(parameters),
 		'parameters': [{
 			'name': 'extensionName',
-			'label': 'Extension'
+			'label': 'Extension',
+			'placeholder': 'Extension name'
 		}, {
 			'name': 'launchpadName',
-			'label': 'Launchpad'
+			'label': 'Launchpad',
+			'placeholder': 'Launchpad project name'
 		}, {
 			'name': 'includeLaunchpad',
 			'label': 'Embedded',
 			'type': 'checkbox'
 		}, {
 			'name': 'brand',
-			'label': 'Brand'
+			'label': 'Brand',
+			'placeholder': 'Brand'
 		}]
 	};
 };
