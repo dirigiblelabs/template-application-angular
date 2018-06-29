@@ -1,7 +1,7 @@
 {
 	'description': '${perspectiveName} perspective',
 #if($includeLaunchpad)
-	'extensionPoint': 'launchpad-${projectName}-perspective',
+	'extensionPoint': 'launchpad-${extensionName}-perspective',
 #else
 	'extensionPoint': 'launchpad-${launchpadName}-perspective',
 #end
