@@ -1,3 +1,4 @@
+#set($dollar = '$' )
 <!DOCTYPE html>
 <!--
   ~ Copyright (c) 2017 SAP and others.
@@ -98,9 +99,9 @@
 			};
 
 #if($includeLaunchpad)
-			$http.get('/services/v3/js/${projectName}/api/launchpad/views.js?extensionPoint=launchpad-${perspectiveName}-${name}-view')
+			${dollar}http.get('/services/v3/js/${projectName}/api/launchpad/views.js?extensionPoint=launchpad-${perspectiveName}-${name}-view')
 #else
-			$http.get('/services/v3/js/${launchpadName}/api/launchpad/views.js?extensionPoint=launchpad-${perspectiveName}-${name}-view')
+			${dollar}http.get('/services/v3/js/${launchpadName}/api/launchpad/views.js?extensionPoint=launchpad-${perspectiveName}-${name}-view')
 #end
 			.success(function(views) {
 				var master = [];
