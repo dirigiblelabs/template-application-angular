@@ -1,11 +1,11 @@
 var apiTemplate = require('template-application-angular/template/api');
 var dataTemplate = require('template-application-angular/template/data');
 var extensionTemplate = require('template-application-angular/template/extension');
-var uiTemplate = require('template-application-angular/template/ui');
+var uiTemplate = require('template-application-angular/template/ui/ui');
 
 exports.getTemplate = function(parameters) {
 	return {
-		'name': 'Full-stack Application (AngularJS)',
+		'name': '(new) Full-stack Application (AngularJS)',
 		'description': 'Full-stack Application with a Database Schema, a set of REST Services and an AngularJS User Interfaces',
 		'model':'true',
 		'sources': getSources(parameters),
