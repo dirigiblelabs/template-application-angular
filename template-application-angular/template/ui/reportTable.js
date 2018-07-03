@@ -17,6 +17,11 @@ exports.getSources = function(parameters) {
 		'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/view.js',
 		'collection': 'uiReportTableModels'
 	}, {
+		'location': '/template-application-angular/ui/perspectives/views/list/extensions/entity.extension.template', 
+		'action': 'generate',
+		'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/view.extension',
+		'collection': 'uiReportTableModels'
+	}, {
 		'location': '/template-application-angular/ui/perspectives/views/report/table/extensions/menu/item.extension.template', 
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/menu/item.extension',
