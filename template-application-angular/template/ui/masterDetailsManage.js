@@ -40,7 +40,7 @@ function getMaster(parameters) {
 		'rename': 'ui/{{perspectiveName}}/views/master/{{fileName}}/master/extensions/view.extensionpoint',
 		'collection': 'uiManageMasterModels'
 	}, {
-		'location': '/template-application-angular/ui/perspectives/views/master-manage/extensions/entity.extension.template', 
+		'location': '/template-application-angular/ui/perspectives/views/master-manage/extensions/view.extension.template', 
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/views/master/{{fileName}}/extensions/view.extension',
 		'collection': 'uiManageMasterModels'

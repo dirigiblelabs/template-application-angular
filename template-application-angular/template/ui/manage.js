@@ -17,7 +17,7 @@ exports.getSources = function(parameters) {
         'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/view.js',
         'collection': 'uiManageModels'
     }, {
-		'location': '/template-application-angular/ui/perspectives/views/manage/extensions/entity.extension.template', 
+		'location': '/template-application-angular/ui/perspectives/views/manage/extensions/view.extension.template', 
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/views/{{fileName}}/extensions/view.extension',
 		'collection': 'uiManageModels'

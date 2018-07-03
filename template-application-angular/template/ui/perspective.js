@@ -18,9 +18,10 @@ exports.getSources = function(parameters) {
 		'engine': 'velocity',
 		'collection': 'uiPerspectives'
 	}, {
-		'location': '/template-application-angular/ui/perspectives/views/manage/extensions/view.extensionpoint.template', 
+		'location': '/template-application-angular/ui/perspectives/extensions/view.extensionpoint.template', 
 		'action': 'generate',
 		'rename': 'ui/{{perspectiveName}}/extensions/view.extensionpoint',
+		'engine': 'velocity',
 		'collection': 'uiPerspectives'
 	}];
 };
