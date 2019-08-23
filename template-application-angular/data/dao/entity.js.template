@@ -64,7 +64,7 @@ exports.get = function(id) {
 	EntityUtils.setLocalDate(entity, "${property.name}");
 #end
 #if($property.dataType == "BOOLEAN")
-		EntityUtils.setBoolean(entity, "${property.name}");
+	EntityUtils.setBoolean(entity, "${property.name}");
 #end
 #end
 	return entity;
@@ -80,7 +80,7 @@ exports.create = function(entity) {
 	EntityUtils.setLocalDate(entity, "${property.name}");
 #end
 #if($property.dataType == "BOOLEAN")
-		EntityUtils.setBoolean(entity, "${property.name}");
+	EntityUtils.setBoolean(entity, "${property.name}");
 #end
 #end
 #end
