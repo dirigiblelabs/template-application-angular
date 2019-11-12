@@ -1,4 +1,4 @@
-# Template V3 - Application (AngularJS based UI)
+# Template - Application (AngularJS based UI)
 
 [![Eclipse License](http://img.shields.io/badge/license-Eclipse-brightgreen.svg)](LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/dirigiblelabs/template-v3-application-angular.svg)](https://github.com/dirigiblelabs/template-v3-application-angular/graphs/contributors)
