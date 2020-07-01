@@ -36,6 +36,10 @@
 #if($property.widgetIsMajor && $property.relationshipType != "COMPOSITION")
 #if($property.widgetType == "DROPDOWN")
 					<td>{{${property.name.toLowerCase()}OptionValue(next.${property.name})}}</td>
+#elseif($property.widgetType == "WEEK")
+					<td>{{next.${property.name} | date:weekFormat}}</td>
+#elseif($property.widgetType == "MONTH")
+					<td>{{next.${property.name} | date:monthFormat}}</td>
 #elseif($property.widgetType == "DATE")
 					<td>{{next.${property.name} | date:dateFormat}}</td>
 #elseif($property.widgetType == "CHECKBOX")
