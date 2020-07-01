@@ -40,6 +40,8 @@
 					<td><a href="mailto:{{next.${property.name}}}">{{next.${property.name}}}</a></td>
 #elseif($property.widgetType == "URL")
 					<td><a href="{{next.${property.name}}}" target="_blank">{{next.${property.name}}}</a></td>
+#elseif($property.widgetType == "TEL")
+					<td><a href="tel:{{next.${property.name}}}">{{next.${property.name}}}</a></td>
 #elseif($property.widgetType == "WEEK")
 					<td>{{next.${property.name} | date:weekFormat}}</td>
 #elseif($property.widgetType == "MONTH")
