@@ -87,7 +87,7 @@
 #elseif($property.widgetType == "TEXTAREA")
 						<div class="form-group">
 							<label>#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</label>
-							<textarea #if($property.dataNotNull)required#end #if($property.isCalculatedProperty)readonly#end class="form-control" placeholder="Enter #if($property.widgetLabel)${property.widgetLabel.toLowerCase()}#else${property.name.toLowerCase()}#end" ng-model="entity.${property.name}" ng-change="updateCalculatedProperties()"></textarea>
+							<textarea #if($property.dataNotNull)required#end #if($property.isCalculatedProperty)readonly#end #if($property.widgetPattern && $property.widgetPattern != "")pattern="${property.widgetPattern}"#end class="form-control" placeholder="Enter #if($property.widgetLabel)${property.widgetLabel.toLowerCase()}#else${property.name.toLowerCase()}#end" ng-model="entity.${property.name}" ng-change="updateCalculatedProperties()"></textarea>
 						</div>
 #elseif($property.widgetType == "NUMBER")
 						<div class="form-group">
@@ -152,7 +152,7 @@
 #else
 						<div class="form-group">
 							<label>#if($property.widgetLabel)${property.widgetLabel}#else${property.name}#end</label>
-							<input #if($property.dataNotNull)required#end #if($property.isCalculatedProperty)readonly#end type="text" class="form-control" placeholder="Enter #if($property.widgetLabel)${property.widgetLabel.toLowerCase()}#else${property.name.toLowerCase()}#end" ng-model="entity.${property.name}" ng-change="updateCalculatedProperties()">
+							<input #if($property.dataNotNull)required#end #if($property.isCalculatedProperty)readonly#end type="text" #if($property.widgetPattern && $property.widgetPattern != "")pattern="${property.widgetPattern}"#end class="form-control" placeholder="Enter #if($property.widgetLabel)${property.widgetLabel.toLowerCase()}#else${property.name.toLowerCase()}#end" ng-model="entity.${property.name}" ng-change="updateCalculatedProperties()">
 						</div>
 #end
 #end
