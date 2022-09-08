@@ -9,10 +9,18 @@
  *   SAP - initial API and implementation
  */
 
-var schemaTemplateManager = require("template-application-schema/template/template");
-var feedTemplateManager = require("template-application-feed/template/template");
-var uiAngularjsTemplateManager = require("template-application-ui-angular/template/template");
-var odataTemplateManager = require("template-application-odata/template/template");
+const schemaTemplateManager = require("template-application-schema/template/template");
+const feedTemplateManager = require("template-application-feed/template/template");
+const uiAngularjsTemplateManager = require("template-application-ui-angular/template/template");
+const odataTemplateManager = require("template-application-odata/template/template");
+const generateUtils = require("ide-generate-service/template/generateUtils");
+const parameterUtils = require("ide-generate-service/template/parameterUtils");
+
+exports.generate = function (model, parameters) {
+    let templateSources = exports.getTemplate(parameters).sources;
+    parameterUtils.process(model, parameters)
+    return generateUtils.generateFiles(model, parameters, templateSources);
+};
 
 exports.getTemplate = function (parameters) {
     let schemaTemplate = schemaTemplateManager.getTemplate(parameters);
